@@ -1,0 +1,438 @@
+/* -------------------------------------------------- */
+/* General Styles */
+/* -------------------------------------------------- */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 66.667%;
+  font-family: "Ubuntu", "Lato", sans-serif;
+  background-color: #f8f9fa;
+  color: #16001e;
+}
+
+.body {
+  display: flex;
+  justify-content: center;
+  padding-top: 10rem;
+  height: 100vh;
+  background-image: linear-gradient(
+      to bottom right,
+      rgba(255, 255, 255, 0.4),
+      hwb(0 0% 100% / 0.7)
+    ),
+    url(/BG.jpg);
+  background-size: cover;
+}
+
+.main {
+  height: 45rem;
+  display: flex;
+  justify-content: center;
+
+  box-shadow: 3px 2px 20px 3px rgba(0, 0, 0, 0.3);
+  border-radius: 32px;
+
+  overflow: hidden;
+  /* width: 1200px; */
+  /* margin: 200px auto; */
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: none;
+  border: solid 5px #ffdeeb;
+  /* box-shadow: inset 0 0 0 2px #000; */
+  background-color: #fff;
+  /* padding: 1.2rem; */
+  width: 5rem;
+  height: 5rem;
+
+  border-radius: 1000px;
+
+  transition: all 0.3s;
+}
+
+.btn:hover {
+  border: none;
+  cursor: pointer;
+  transform: scale(1.2);
+  /* border: solid 15px #fff; */
+}
+
+.font--big {
+  font-size: 3rem;
+}
+
+.font--med {
+  font-size: 2.4rem;
+}
+
+.text-align {
+  text-align: center;
+}
+
+.icon {
+  width: 2rem;
+}
+
+/* -------------------------------------------------- */
+/* Summary Styles */
+/* -------------------------------------------------- */
+.summary {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-image: linear-gradient(to bottom right, #8fbfe0, #7c77b9);
+  width: 40rem;
+
+  /* border-top-left-radius: 32px;
+  border-bottom-left-radius: 32px; */
+
+  /* box-shadow: 0 0 14px 3px rgba(0, 0, 0, 0.3); */
+}
+
+.progress-bar {
+  /* background-color: white; */
+  border-radius: 50%;
+
+  position: relative;
+
+  margin-bottom: 2.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 19rem;
+}
+
+.progress-bar-icon {
+  transition: all 0.5s;
+  stroke: url(#currentGrad);
+}
+
+.progress-shadow {
+  width: 16rem;
+  height: 16rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  box-shadow: 1px 4px 6px 6px rgba(0, 0, 0, 0.2);
+}
+
+.counter {
+  /* opacity: 0; */
+  /* margin: auto auto; */
+  width: 11rem;
+  height: 11rem;
+  /* opacity: 0.5; */
+  /* padding: auto; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  background-color: #7c77b9;
+
+  box-shadow: inset -2px -2px 3px 7px rgba(0, 0, 0, 0.15);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+}
+
+.counter--time {
+  font-size: 2.4rem;
+  /* transform: translate(-50%, -50%); */
+}
+
+.summary-title {
+  padding: 1rem 2.4rem;
+  display: inline-block;
+
+  background-color: rgba(255, 255, 255, 0.5);
+  /* backdrop-filter: blur(12px); */
+  border-radius: 500px;
+  box-shadow: 2px 2px 5px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* -------------------------------------------------- */
+/* Tasks Styles */
+/* -------------------------------------------------- */
+
+.section-tasks {
+  background-color: #8fbfe0;
+  /* background-image: linear-gradient(to bottom, #8fbfe0, #7c77b9); */
+  background-image: linear-gradient(to top right, #7c77b9, #8fbfe0);
+  width: 100rem;
+  /* border-top-right-radius: 32px; */
+  /* border-bottom-right-radius: 32px; */
+  padding: 2.4rem;
+
+  overflow: scroll;
+}
+
+.tasks {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-bottom: 2.4rem;
+}
+
+.task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.2rem;
+
+  background-color: #fcc2d7;
+  border: solid 2px #ffdeeb;
+  font-size: 2rem;
+
+  height: 8.4rem;
+  border-radius: 20px;
+  overflow: hidden;
+
+  box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.3);
+}
+
+.task-number {
+  display: inline-block;
+  padding: 3.2rem;
+  background-color: #f783ac;
+  border-right: solid 8px #ffdeeb;
+  /* color: #fff; */
+  /* background-image: linear-gradient(to right, #faa2c1 70%, #fcc2d7); */
+  margin-right: 1.6rem;
+
+  /* overflow: hidden; */
+}
+
+.task-control {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  padding-right: 1.2rem;
+}
+
+.task--add {
+  position: relative;
+
+  /* background-color: rgba(184, 226, 140, 0.5); */
+  background-color: rgba(252, 194, 215, 0.4);
+  display: flex;
+  justify-content: center;
+  border: none;
+
+  /* box-shadow: inset 0 0 0 5px rgba(134, 203, 145, 1); */
+  color: #000;
+}
+
+.task-title {
+  flex-grow: 1;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* -------------------------------------------------- */
+/* Prompt Styles */
+/* -------------------------------------------------- */
+
+.task-prompt {
+  /* display: none; */
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  background-color: #e8e9f3;
+  font-size: 2.4rem;
+  width: 30%;
+  border-radius: 28px;
+  overflow: hidden;
+  z-index: 2;
+
+  transition: all 0.5s;
+}
+
+.visible.task-prompt {
+  /* display: block; */
+  opacity: 100;
+  pointer-events: all;
+  /* height: 60rem; */
+}
+
+.prompt-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 1.6rem;
+  /* margin-bottom: 3.2rem; */
+
+  background-color: #ffdf64;
+  /* color: #fff; */
+}
+
+.prompt-input-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.prompt-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #61988e;
+  height: 7.8rem;
+}
+
+.prompt-input-fields {
+  padding: 4.8rem 2.4rem;
+}
+
+.label {
+  font-size: 2rem;
+  margin-bottom: 2.4rem;
+}
+
+.input {
+  font-size: 2rem;
+  font-family: inherit;
+  border: solid 5px #f4aaaf;
+
+  border-radius: 11px;
+}
+
+.input--task {
+  /* height: 12.8rem; */
+  /* vertical-align: baseline; */
+  resize: none;
+  margin-bottom: 4.8rem;
+}
+
+.prompt-time-fields {
+  display: flex;
+  justify-content: space-between;
+}
+
+.task-prompt .btn {
+  background-color: transparent;
+  border: none;
+}
+
+.btn--prompt-submit {
+  width: 100%;
+  height: 100%;
+  /* padding: 1.2rem; */
+}
+
+.icon--submit {
+  width: 5.4rem;
+}
+
+.task-prompt .btn--close {
+  background-color: #ff6b6b;
+}
+
+.blur {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.visible.blur {
+  opacity: 100;
+  pointer-events: all;
+
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 1;
+
+  transition: all 0.3s;
+  pointer-events: all;
+  backdrop-filter: blur(10px);
+
+  /* transition: all 0.3s; */
+}
+
+.prompt-time-fields {
+  display: flex;
+  justify-content: space-around;
+}
+
+.prompt-time-field {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input--time {
+  text-align: center;
+  font-size: 6.2rem;
+  width: 8.6rem;
+}
+
+.time-label {
+  font-size: 2rem;
+  color: #555;
+}
+
+.btn--time {
+  border: none;
+  background-color: none;
+  cursor: pointer;
+}
+
+.icon--time {
+  width: 7.4rem;
+}
+/* 
+-- 01 TYPOGRAPHY --
+FONT SIZE SYSTEM (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+FONT WEIGHTS:
+
+-- 02 COLORS --
+
+MAIN: 
+TINTS:
+SHADES: 
+ACCENTS:
+GRAYS:
+
+FONT SIZES USED
+Large (headings): 
+Normal (paragraph): 
+Small (Links):
+
+
+-- 03 IMAGES --
+
+-- 07 WHITESPACE -- 
+ SPACING SYSTEM (px)
+ 2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+-- BORDER RADIUS --
+Small: 
+Medium: 20px
+Big: 32px
+ */

@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do App</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="body">
+    <main class="main">
+      <section class="summary font--med">
+        <div class="completed-summary font--big text-align">
+          <div class="progress-bar progress-bar--task">
+            <!-- <svg
+              xmlns="http://www.w3.org/2000/svg"
+              version="1.1"
+              class="progress-bar-icon progress-bar-icon--task"
+              >
+              <defs> 
+            <radialGradient
+                id="currentGrad"
+                cx="50%"
+                cy="15%"
+                spreadMethod="reflect"
+                >
+                <stop offset="0%" stop-color="#fecee9" />
+                <stop offset="100%" stop-color="#ef6f6c" />
+              </radialGradient>
+            </defs>
+            <circle cx="80" cy="80" r="70" stroke-linecap="round" />
+            </svg> -->
+            <div class="progress-shadow"></div>
+            <svg
+              width="190"
+              height="190"
+              viewBox="-23.75 -23.75 237.5 237.5"
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+              style="transform: rotate(180deg)"
+              class="progress-bar-icon"
+            >
+              <defs>
+                <radialGradient
+                  id="currentGrad"
+                  cx="50%"
+                  cy="15%"
+                  spreadMethod="reflect"
+                >
+                  <stop offset="0%" stop-color="#fecee9" />
+                  <stop offset="100%" stop-color="#ef6f6c" />
+                </radialGradient>
+              </defs>
+              <circle
+                r="85"
+                cx="95"
+                cy="95"
+                fill="transparent"
+                stroke="transparent"
+                stroke-width="30"
+                stroke-dasharray="533.8000000000001px"
+                stroke-dashoffset="0"
+              ></circle>
+              <circle
+                class="progress-bar-icon progress-bar-icon-progress--task"
+                r="85"
+                cx="95"
+                cy="95"
+                stroke-width="30"
+                stroke-linecap="round"
+                stroke="#000000"
+                fill="transparent"
+                stroke-dasharray="533.8000000000001px"
+              ></circle>
+            </svg>
+            <div class="counter counter--task">
+              <span class="completed">2</span>/<span class="total">10</span>
+            </div>
+          </div>
+          <p class="font--med summary-title">Completed</p>
+        </div>
+        <div class="time-summary font--big text-align">
+          <div class="progress-bar progress-bar--task">
+            <div class="progress-shadow"></div>
+            <svg
+              width="190"
+              height="190"
+              viewBox="-23.75 -23.75 237.5 237.5"
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+              style="transform: rotate(180deg)"
+            >
+              <defs>
+                <radialGradient
+                  id="currentGrad"
+                  cx="50%"
+                  cy="15%"
+                  spreadMethod="reflect"
+                >
+                  <stop offset="0%" stop-color="#fecee9" />
+                  <stop offset="100%" stop-color="#ef6f6c" />
+                </radialGradient>
+              </defs>
+              <circle
+                r="85"
+                cx="95"
+                cy="95"
+                fill="transparent"
+                stroke="transparent"
+                stroke-width="30"
+                stroke-dasharray="533.8000000000001px"
+                stroke-dashoffset="0"
+              ></circle>
+              <circle
+                class="progress-bar-icon progress-bar-icon-progress--time"
+                r="85"
+                cx="95"
+                cy="95"
+                stroke-width="30"
+                stroke-linecap="round"
+                stroke="#000000"
+                fill="transparent"
+                stroke-dasharray="533.8000000000001px"
+              ></circle>
+            </svg>
+            <div class="counter counter--time">
+              <span class="timer">04:00:00</span>
+            </div>
+          </div>
+          <p class="font--med summary-title">Time Left</p>
+        </div>
+      </section>
+      <section class="section-tasks">
+        <div class="tasks">
+          <div class="task">
+            <div class="task-title">
+              <span class="task-number">1</span>Do the dishes
+            </div>
+            <div class="task-timer">4:00:00</div>
+            <div class="task-control">
+              <button class="btn btn-pause">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="32"
+                  height="32"
+                  fill="#000000"
+                  viewBox="0 0 256 256"
+                  class="icon icon--pause"
+                >
+                  <path
+                    d="M184,64V192a8,8,0,0,1-16,0V64a8,8,0,0,1,16,0Zm40-8a8,8,0,0,0-8,8V192a8,8,0,0,0,16,0V64A8,8,0,0,0,224,56Zm-80,72a15.76,15.76,0,0,1-7.33,13.34L48.48,197.49A15.91,15.91,0,0,1,24,184.15V71.85A15.91,15.91,0,0,1,48.48,58.51l88.19,56.15A15.76,15.76,0,0,1,144,128Zm-16.18,0L40,72.08V183.93Z"
+                  ></path>
+                </svg>
+              </button>
+              <button class="btn btn-edit">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="32"
+                  height="32"
+                  fill="#000000"
+                  viewBox="0 0 256 256"
+                  class="icon icon--edit"
+                >
+                  <path
+                    d="M227.31,73.37,182.63,28.68a16,16,0,0,0-22.63,0L36.69,152A15.86,15.86,0,0,0,32,163.31V208a16,16,0,0,0,16,16H92.69A15.86,15.86,0,0,0,104,219.31L227.31,96a16,16,0,0,0,0-22.63ZM92.69,208H48V163.31l88-88L180.69,120ZM192,108.68,147.31,64l24-24L216,84.68Z"
+                  ></path>
+                </svg>
+              </button>
+              <button class="btn btn-discard">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="32"
+                  height="32"
+                  fill="#000000"
+                  viewBox="0 0 256 256"
+                  class="icon icon--discard"
+                >
+                  <path
+                    d="M216,48H176V40a24,24,0,0,0-24-24H104A24,24,0,0,0,80,40v8H40a8,8,0,0,0,0,16h8V208a16,16,0,0,0,16,16H192a16,16,0,0,0,16-16V64h8a8,8,0,0,0,0-16ZM96,40a8,8,0,0,1,8-8h48a8,8,0,0,1,8,8v8H96Zm96,168H64V64H192ZM112,104v64a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Zm48,0v64a8,8,0,0,1-16,0V104a8,8,0,0,1,16,0Z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="task task--add">
+          <button class="btn btn--add">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="#000000"
+              viewBox="0 0 256 256"
+            >
+              <path
+                d="M224,128a8,8,0,0,1-8,8H136v80a8,8,0,0,1-16,0V136H40a8,8,0,0,1,0-16h80V40a8,8,0,0,1,16,0v80h80A8,8,0,0,1,224,128Z"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </section>
+    </main>
+  </body>
+  <div class="blur"></div>
+  <aside class="task-prompt">
+    <header class="prompt-header">
+      <p>Add a task</p>
+      <button class="btn btn--footer btn--close">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="#000000"
+          viewBox="0 0 256 256"
+          class="icon--close"
+        >
+          <path
+            d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"
+          ></path>
+        </svg>
+      </button>
+    </header>
+    <form class="prompt-form">
+      <div class="prompt-input-fields">
+        <div class="prompt-input-field">
+          <label class="label" for="task"
+            >What would you like to get done?</label
+          >
+          <textarea
+            type="text"
+            id="task"
+            class="input input--task"
+            placeholder="Climb Mount Everest"
+            rows="8"
+            autocorrect="on"
+            required
+          ></textarea>
+        </div>
+        <div class="prompt-input-field">
+          <label class="label">How long do you expect to take?</label>
+          <div class="prompt-time-fields">
+            <div class="prompt-time-field">
+              <a class="btn--time btn--time-increase" aria-details="hours">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="#000000"
+                  viewBox="0 0 256 256"
+                  class="icon--time icon--time-increase"
+                >
+                  <path
+                    d="M213.66,165.66a8,8,0,0,1-11.32,0L128,91.31,53.66,165.66a8,8,0,0,1-11.32-11.32l80-80a8,8,0,0,1,11.32,0l80,80A8,8,0,0,1,213.66,165.66Z"
+                  ></path>
+                </svg>
+              </a>
+              <input
+                type="numeric"
+                placeholder="00"
+                class="input--time input--hours"
+                value="00"
+                max="99"
+                id="hours"
+              />
+              <label class="time-label" for="hours">Hours</label>
+              <a class="btn--time btn--time-decrease" aria-details="hours">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="#000000"
+                  viewBox="0 0 256 256"
+                  class="icon--time icon--time-decrease"
+                >
+                  <path
+                    d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+            <div class="prompt-time-field">
+              <a class="btn--time btn--time-increase" aria-details="minutes">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="#000000"
+                  viewBox="0 0 256 256"
+                  class="icon--time icon--time-increase"
+                >
+                  <path
+                    d="M213.66,165.66a8,8,0,0,1-11.32,0L128,91.31,53.66,165.66a8,8,0,0,1-11.32-11.32l80-80a8,8,0,0,1,11.32,0l80,80A8,8,0,0,1,213.66,165.66Z"
+                  ></path>
+                </svg>
+              </a>
+              <input
+                type="numeric"
+                placeholder="00"
+                class="input--time input--minutes"
+                value="00"
+                max="99"
+                id="minutes"
+              />
+              <label class="time-label" for="minutes">Minutes</label>
+              <a class="btn--time btn--time-decrease" aria-details="minutes">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="#000000"
+                  viewBox="0 0 256 256"
+                  class="icon--time icon--time-decrease"
+                >
+                  <path
+                    d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+            <div class="prompt-time-field">
+              <a class="btn--time btn--time-increase" aria-details="seconds">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="#000000"
+                  viewBox="0 0 256 256"
+                  class="icon--time icon--time-increase"
+                >
+                  <path
+                    d="M213.66,165.66a8,8,0,0,1-11.32,0L128,91.31,53.66,165.66a8,8,0,0,1-11.32-11.32l80-80a8,8,0,0,1,11.32,0l80,80A8,8,0,0,1,213.66,165.66Z"
+                  ></path>
+                </svg>
+              </a>
+              <input
+                type="numeric"
+                placeholder="00"
+                class="input--time input--seconds"
+                value="00"
+                max="99"
+                id="seconds"
+              />
+              <label class="time-label" for="seconds">Seconds</label>
+              <a class="btn--time btn--time-decrease" aria-details="seconds">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="#000000"
+                  viewBox="0 0 256 256"
+                  class="icon--time icon--time-decrease"
+                >
+                  <path
+                    d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="prompt-footer">
+        <button class="btn btn--footer btn--prompt-submit">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="#000000"
+            viewBox="0 0 256 256"
+            class="icon--submit"
+          >
+            <path
+              d="M243.28,68.24l-24-23.56a16,16,0,0,0-22.59,0L104,136.23l-36.69-35.6a16,16,0,0,0-22.58.05l-24,24a16,16,0,0,0,0,22.61l71.62,72a16,16,0,0,0,22.63,0L243.33,90.91A16,16,0,0,0,243.28,68.24ZM103.62,208,32,136l24-24a.6.6,0,0,1,.08.08l42.35,41.09a8,8,0,0,0,11.19,0L208.06,56,232,79.6Z"
+            ></path>
+          </svg>
+        </button>
+      </footer>
+    </form>
+  </aside>
+</html>
