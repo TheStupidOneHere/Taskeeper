@@ -15,6 +15,9 @@ This app is a simple and minimal web app meant to be a challenge for myself. It 
 ### Why?
 This app is a solo project by me to test and expand my skills. Furthermore, it is just truly fun for me. I hope that it will help me make something great and motivate some people to do the same.
 
+### Where?
+You can check out the [live demo](https://bawab-taskeeper.netlify.app/)
+
 ### Features
 - Adding new tasks
 - Animated timer and task counters
